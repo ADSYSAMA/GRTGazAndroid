@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GRTGazAndroid.iml" filepath="$PROJECT_DIR$/GRTGazAndroid.iml" />
+      <module fileurl="file://C:\Users\AdSy\Desktop\GRTGazAndroid\GRTGazAndroid\GRTGazAndroid.iml" filepath="C:\Users\AdSy\Desktop\GRTGazAndroid\GRTGazAndroid\GRTGazAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
