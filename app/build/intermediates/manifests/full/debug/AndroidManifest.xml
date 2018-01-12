@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="26" />
+        android:targetSdkVersion="27" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -34,8 +34,6 @@
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.adsy.grtgaz.MainActivity" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -53,7 +51,23 @@
 
         <activity
             android:name="com.example.adsy.grtgaz.MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:allowBackup="true"
+            android:exported="true"
+            android:label="@string/title_activity_maps" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.adsy.grtgaz.DptActivity"
+            android:allowBackup="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="android.support.VERSION"

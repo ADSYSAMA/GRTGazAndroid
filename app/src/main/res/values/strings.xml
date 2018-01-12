@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">GRTGaz</string>
     <string name="title_activity_maps">Map</string>
+    <string-array name="dpt">
+        <item>Item1</item>
+        <item>Item2</item>
+        <item>Item3</item>
+        <item>Item4</item>
+        <item>Item5</item>
+    </string-array>
 </resources>
