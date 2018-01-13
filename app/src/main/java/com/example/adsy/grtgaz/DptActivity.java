@@ -3,6 +3,7 @@ package com.example.adsy.grtgaz;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class DptActivity extends Activity {
+public class DptActivity extends AppCompatActivity {
 
     ListView view_dpt;
     ArrayAdapter<String> adapter;
