@@ -8,4 +8,6 @@
         <item>Item4</item>
         <item>zizi</item>
     </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_afficher_list">AfficherList</string>
 </resources>

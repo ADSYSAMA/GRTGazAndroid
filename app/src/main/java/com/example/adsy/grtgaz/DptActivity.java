@@ -1,8 +1,6 @@
 package com.example.adsy.grtgaz;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,7 +27,7 @@ public class DptActivity extends AppCompatActivity {
         ArrayList<String> arrayDPT = new ArrayList<>();
         arrayDPT.addAll(Arrays.asList(getResources().getStringArray(R.array.dpt)));
 
-        adapter = new ArrayAdapter<String>(
+        adapter = new ArrayAdapter<>(
                 DptActivity.this,
                 android.R.layout.simple_list_item_1,
                 arrayDPT

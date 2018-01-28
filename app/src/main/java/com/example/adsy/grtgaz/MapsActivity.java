@@ -19,6 +19,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -29,7 +30,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Toast.makeText(this, "Map is Ready", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onMapReady: map is ready");
         mMap = googleMap;
-
+        createMarker(333, 48.866667,2.333333);
         if (mLocationPermissionsGranted) {
             getDeviceLocation();
 
@@ -42,6 +43,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             mMap.getUiSettings().setMyLocationButtonEnabled(false);
 
         }
+
     }
 
     private static final String TAG = "MapActivity";
@@ -60,10 +62,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-
         getLocationPermission();
     }
-
+    private void createMarker(int idBalise,double lat,double lng){
+    mMap.addMarker(new MarkerOptions().position(new LatLng(lat, lng)).title(" Balise Numéro : " + idBalise));
+    }
     private void getDeviceLocation(){
         Log.d(TAG, "getDeviceLocation: getting the devices current location");
 
@@ -81,7 +84,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                             Location currentLocation = (Location) task.getResult();
 
                             moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()),
-                                    DEFAULT_ZOOM);
+                                    5);
 
                         }else{
                             Log.d(TAG, "onComplete: current location is null");
@@ -94,13 +97,14 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             Log.e(TAG, "getDeviceLocation: SecurityException: " + e.getMessage() );
         }
     }
-
+    //Permet de recentrer la carte avec un zoom approprié
     private void moveCamera(LatLng latLng, float zoom){
         Log.d(TAG, "moveCamera: moving the camera to: lat: " + latLng.latitude + ", lng: " + latLng.longitude );
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
     }
 
     private void initMap(){
+        //créer le fragment de la map
         Log.d(TAG, "initMap: initializing map");
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
 
@@ -108,6 +112,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void getLocationPermission(){
+        //Vérifier les permissions de géolocalisations
         Log.d(TAG, "getLocationPermission: getting location permissions");
         String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.ACCESS_COARSE_LOCATION};
@@ -152,6 +157,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         }
+
     }
 
 

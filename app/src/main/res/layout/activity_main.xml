@@ -5,11 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.adsy.grtgaz.MainActivity">
-
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout1"
+      >
     <Button
         android:id="@+id/boutonMap"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:text="Afficher la carte"
-         />
+        />
+
+    <Button
+        android:id="@+id/boutonRegion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Afficher les Régions"
+        android:layout_weight="1"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/layoutRegion"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+</LinearLayout>
+
+
 </android.support.constraint.ConstraintLayout>
